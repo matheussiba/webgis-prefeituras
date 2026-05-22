@@ -89,7 +89,7 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="hero-panel" aria-label="Resumo do MVP">
+          <div className="hero-panel" aria-label="Resumo da plataforma">
             <div>
               <strong>3</strong>
               <span>{t('proof.channels')}</span>
@@ -111,7 +111,7 @@ function App() {
 
         <section id="product" className="section split-section">
           <div>
-            <p className="eyebrow">MVP concierge</p>
+            <p className="eyebrow">Plataforma integrada</p>
             <h2>{t('pain.title')}</h2>
           </div>
           <p>{t('pain.description')}</p>
@@ -129,7 +129,7 @@ function App() {
               <strong>{pilotProject.phase}</strong>
             </article>
             <article>
-              <span>Duração da POC</span>
+              <span>Ciclo de implantação</span>
               <strong>{pilotProject.duration}</strong>
             </article>
             <article>
@@ -330,8 +330,8 @@ function App() {
             <p className="eyebrow">Workflow multinível</p>
             <h2>Da contribuição à devolutiva homologada.</h2>
             <p>
-              O MVP explicita o caminho operacional previsto no DRS, mesmo que parte dele ainda seja
-              simulada no concierge.
+              A plataforma organiza o caminho operacional previsto para processos participativos,
+              mantendo rastreabilidade entre captura, análise técnica e resposta pública.
             </p>
           </div>
           <div className="workflow-grid">
@@ -404,19 +404,18 @@ function App() {
 
         <section className="section proposal-section">
           <div>
-            <p className="eyebrow">Proposta executiva</p>
-            <h2>POC pronta para apresentar a prefeitura ou consultoria.</h2>
+            <p className="eyebrow">Implantação institucional</p>
+            <h2>Pronta para apoiar processos oficiais de Plano Diretor.</h2>
           </div>
           <div className="proposal-copy">
             <p>
-              A entrega sugerida é uma POC de 8 a 12 semanas para demonstrar portal público, WebGIS,
-              consulta documental, participação híbrida, triagem, devolutiva e exportação dos dados
-              consolidados para o relatório final do Plano Diretor.
+              A plataforma reúne portal público, WebGIS, consulta documental, participação híbrida,
+              triagem, devolutiva e exportação dos dados consolidados para subsidiar o relatório
+              final e o Projeto de Lei do Plano Diretor.
             </p>
             <p>
-              O posicionamento comercial é vender uma plataforma de governança participativa, não um
-              site institucional: o preço acompanha a complexidade do processo, sem penalizar alta
-              participação cidadã.
+              A arquitetura foi pensada para equipes técnicas, consultorias, conselhos e gestão
+              municipal trabalharem em um fluxo único, com transparência pública e segurança jurídica.
             </p>
           </div>
         </section>

@@ -1,6 +1,6 @@
 # WebGIS Prefeituras
 
-MVP concierge de uma plataforma WebGIS para prefeituras e consultorias conduzirem processos de Plano Diretor com participacao social, mapas interativos, linguagem cidada e devolutivas rastreaveis.
+Plataforma WebGIS para prefeituras e consultorias conduzirem processos de Plano Diretor com participacao social, mapas interativos, linguagem cidada e devolutivas rastreaveis.
 
 ## Stack
 
@@ -21,12 +21,12 @@ npm run lint
 
 ## Convencoes
 
-- A interface do MVP nasce em portugues.
+- A interface nasce em portugues.
 - O projeto ja possui i18n habilitado para expansao futura.
 - O codigo, nomes de componentes, arquivos, funcoes, variaveis e chaves tecnicas ficam em ingles.
-- Dados urbanos do mapa sao demonstrativos e mockados para validacao comercial do MVP concierge.
+- Dados urbanos do mapa sao demonstrativos para apresentacao institucional.
 
-## Escopo do MVP
+## Escopo da plataforma
 
 - Landing page institucional.
 - Mapa WebGIS demonstrativo com camadas urbanisticas.
@@ -37,6 +37,6 @@ npm run lint
 
 ## Documentacao
 
-- `docs/mvp-scope.md`: escopo da versao concierge e proximas evolucoes.
+- `docs/platform-scope.md`: escopo funcional e proximas evolucoes.
 - `docs/compliance-and-identity.md`: abordagem de gov.br, CPF, LGPD, moderacao e audit trail.
-- `docs/public-sector-proposal.md`: proposta executiva para prefeitura, consultoria ou consorcio publico.
+- `docs/institutional-overview.md`: visao institucional para prefeitura, consultoria ou consorcio publico.

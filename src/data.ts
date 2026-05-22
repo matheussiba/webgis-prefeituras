@@ -48,7 +48,7 @@ export const pilotProject: PilotProject = {
   municipality: 'São José dos Campos',
   phase: 'Consulta pública da minuta e zoneamento proposto',
   scope: 'Ambiente demonstrativo para revisão do Plano Diretor Municipal',
-  duration: 'POC de 8 a 12 semanas',
+  duration: '8 a 12 semanas',
   channels: ['Online / Web', 'Audiência pública', 'Unidade móvel', 'Ponto assistido'],
   deliverables: [
     'Portal público mobile-first',

@@ -1,28 +1,28 @@
-# Proposta Executiva: POC WebGIS para Plano Diretor
+# Visao Institucional: WebGIS para Plano Diretor
 
 ## Resumo
 
-Esta POC demonstra uma plataforma WebGIS para prefeituras, consultorias e equipes de planejamento urbano conduzirem processos de Plano Diretor com participacao social hibrida, mapas interativos, documentos em linguagem cidada, workflow de devolutivas e dados prontos para analise territorial.
+A plataforma WebGIS apoia prefeituras, consultorias e equipes de planejamento urbano na conducao de processos de Plano Diretor com participacao social hibrida, mapas interativos, documentos em linguagem cidada, workflow de devolutivas e dados prontos para analise territorial.
 
-## Municipio piloto demonstrativo
+## Municipio de referencia
 
 - Municipio: Sao Jose dos Campos
-- Fase simulada: consulta publica da minuta e do zoneamento proposto
-- Escopo: ambiente demonstrativo para revisao do Plano Diretor Municipal
-- Duracao sugerida: 8 a 12 semanas
+- Fase: consulta publica da minuta e do zoneamento proposto
+- Escopo: ambiente de revisao do Plano Diretor Municipal
+- Ciclo de implantacao: 8 a 12 semanas
 
-## Entregaveis da POC
+## Entregaveis institucionais
 
 - Portal publico mobile-first do Plano Diretor
 - WebGIS com camadas urbanisticas configuraveis
 - Contribuicao territorial por clique no mapa
 - Consulta documental com texto tecnico e linguagem cidada
-- Simulacao de canais online, audiencia publica, unidade movel e ponto assistido
+- Canais online, audiencia publica, unidade movel e ponto assistido
 - Workflow de triagem, parecer, validacao e devolutiva
 - Painel publico de indicadores
-- Especificacao de gov.br, LGPD, audit trail e exportacao GIS
+- Estrutura de gov.br, LGPD, audit trail e exportacao GIS
 
-## Camadas demonstrativas
+## Camadas urbanisticas
 
 - Zoneamento atual
 - Zoneamento proposto
@@ -45,22 +45,22 @@ Esta POC demonstra uma plataforma WebGIS para prefeituras, consultorias e equipe
 
 ## Abordagem de conformidade
 
-- Autenticacao gov.br e CPF previstos para envio formal de propostas.
+- Autenticacao gov.br e CPF para envio formal de propostas.
 - Consentimento explicito para tratamento de dados pessoais.
 - Anonimizacao nos paineis publicos.
 - Logs imutaveis para moderacao, pareceres, validacoes e deliberacoes.
 - Exportacao completa dos dados em CSV, JSON, Excel, Shapefile e GeoJSON.
 
-## Modelo comercial sugerido
+## Modelo comercial
 
-O preco nao deve crescer porque mais cidadaos participaram. O preco deve acompanhar a complexidade do processo institucional.
+O preco acompanha a complexidade do processo institucional, sem limitar o alcance da participacao publica.
 
 - Consulta: portal, formularios, materiais e indicadores basicos.
 - WebGIS: mapas, camadas, contribuicoes espaciais e exportacao geoespacial.
 - Governanca: documentos publicos, workflow, moderacao, auditoria e devolutivas.
 - Enterprise: gov.br, SSO, APIs, GeoSanja/GIS municipal, white-label e IA.
 
-## Criterios de sucesso
+## Indicadores de sucesso
 
 - Contribuicoes recebidas por canal.
 - Percentual de contribuicoes com localizacao territorial.

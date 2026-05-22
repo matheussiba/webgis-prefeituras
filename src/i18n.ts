@@ -15,19 +15,19 @@ const resources = {
         title: 'Pare de adivinhar. Comece a mapear a participação cidadã.',
         description:
           'Uma plataforma para prefeituras e consultorias conduzirem Planos Diretores com mapas interativos, participação social híbrida, linguagem cidadã, transparência e devolutivas rastreáveis.',
-        primaryCta: 'Explorar MVP',
+        primaryCta: 'Explorar plataforma',
         secondaryCta: 'Ver mapa demonstrativo',
       },
       proof: {
         projects: 'processos participativos simuláveis',
-        layers: 'camadas urbanísticas no MVP',
+        layers: 'camadas urbanísticas',
         channels: 'canais de participação',
         flow: 'fluxo de devolutiva',
       },
       pain: {
         title: 'Substitua formulários soltos por participação territorializada.',
         description:
-          'O MVP concierge mostra como audiências, mapas, documentos públicos e contribuições presenciais podem alimentar uma única base de dados urbana.',
+          'A plataforma mostra como audiências, mapas, documentos públicos e contribuições presenciais podem alimentar uma única base de dados urbana.',
       },
       cards: {
         geolocated: {
@@ -96,7 +96,7 @@ const resources = {
         enterprise: 'Enterprise',
       },
       footer: {
-        text: 'MVP concierge para validar uma plataforma brasileira de participação social e WebGIS para Planos Diretores.',
+        text: 'Plataforma brasileira de participação social e WebGIS para Planos Diretores.',
       },
     },
   },
@@ -113,12 +113,12 @@ const resources = {
         title: 'Stop guessing. Start mapping citizen participation.',
         description:
           'A platform for cities and planning consultants to run master plan processes with interactive maps, hybrid participation, plain language, transparency, and traceable feedback.',
-        primaryCta: 'Explore MVP',
+        primaryCta: 'Explore platform',
         secondaryCta: 'View demo map',
       },
       proof: {
         projects: 'participatory processes to simulate',
-        layers: 'urban layers in the MVP',
+        layers: 'urban planning layers',
         channels: 'participation channels',
         flow: 'feedback workflow',
       },
