@@ -31,7 +31,7 @@ const planNames = planTiers.map((tier) => tier.name)
 const allStatuses: ContributionStatus[] = ['Nova', 'Em triagem', 'Análise técnica', 'Com devolutiva']
 
 type Page = 'home' | 'pricing' | 'map' | 'about'
-type MapTabId = 'layers' | 'contribute' | 'list' | 'style'
+type MapTabId = 'layers' | 'contribute' | 'list'
 
 function getCurrentPage(): Page {
   if (window.location.hash === '#mapa') return 'map'
@@ -330,7 +330,8 @@ function MapPage() {
   const draftMarkerRef = useRef<MapboxMarker | null>(null)
 
   const [activeTab, setActiveTab] = useState<MapTabId>('layers')
-  const [styleId, setStyleId] = useState<string>(mapStyleOptions[0].id)
+  const [styleId] = useState<string>(mapStyleOptions[0].id)
+  const [isLegendOpen, setIsLegendOpen] = useState(true)
   const [layerVisibility, setLayerVisibility] = useState<Record<string, boolean>>(() =>
     Object.fromEntries(urbanLayers.map((layer) => [layer.id, true])),
   )
@@ -449,7 +450,7 @@ function MapPage() {
           const element = document.createElement('div')
           element.className = 'draft-marker'
           element.innerHTML = '<span></span>'
-          draftMarkerRef.current = new mapbox.Marker({ element, anchor: 'bottom' })
+          draftMarkerRef.current = new mapbox.Marker({ element, anchor: 'center' })
             .setLngLat([next.lng, next.lat])
             .addTo(map)
         }
@@ -645,7 +646,7 @@ function MapPage() {
     const element = document.createElement('div')
     element.className = 'draft-marker'
     element.innerHTML = '<span></span>'
-    draftMarkerRef.current = new mapbox.Marker({ element, anchor: 'bottom' })
+    draftMarkerRef.current = new mapbox.Marker({ element, anchor: 'center' })
       .setLngLat([center.lng, center.lat])
       .addTo(map)
   }
@@ -738,15 +739,6 @@ function MapPage() {
             >
               Contribuições
               <em>{contributions.length}</em>
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeTab === 'style'}
-              className={activeTab === 'style' ? 'active' : ''}
-              onClick={() => setActiveTab('style')}
-            >
-              Estilo
             </button>
           </div>
 
@@ -985,33 +977,6 @@ function MapPage() {
               </div>
             )}
 
-            {activeTab === 'style' && (
-              <div className="style-panel">
-                <div className="panel-heading">
-                  <strong>Estilo do mapa</strong>
-                  <p>Troque o estilo conforme o tipo de análise e contexto do território.</p>
-                </div>
-                <div className="style-options">
-                  {mapStyleOptions.map((option) => {
-                    const selected = option.id === styleId
-                    return (
-                      <button
-                        type="button"
-                        key={option.id}
-                        className={`style-option ${selected ? 'selected' : ''}`}
-                        onClick={() => setStyleId(option.id)}
-                      >
-                        <span className={`style-preview style-preview-${option.id}`} aria-hidden="true" />
-                        <span className="style-info">
-                          <strong>{option.name}</strong>
-                          <em>{option.description}</em>
-                        </span>
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-            )}
           </div>
         </aside>
 
@@ -1031,17 +996,30 @@ function MapPage() {
             </div>
           )}
 
-          <div className="map-floating-summary" aria-label="Resumo das categorias">
-            <strong>Contribuições por tema</strong>
-            <ul>
-              {contributionCategories.map((category) => (
-                <li key={category.id}>
-                  <span className="category-dot" style={{ backgroundColor: category.color }} />
-                  <span>{category.name}</span>
-                  <em>{stats.byCategory[category.id]}</em>
-                </li>
-              ))}
-            </ul>
+          <div
+            className={`map-floating-summary ${isLegendOpen ? 'is-open' : 'is-collapsed'}`}
+            aria-label="Resumo das categorias"
+          >
+            <button
+              type="button"
+              className="legend-toggle"
+              aria-expanded={isLegendOpen}
+              onClick={() => setIsLegendOpen((current) => !current)}
+            >
+              <strong>Contribuições por tema</strong>
+              <span>{isLegendOpen ? 'Ocultar' : 'Mostrar'}</span>
+            </button>
+            {isLegendOpen && (
+              <ul>
+                {contributionCategories.map((category) => (
+                  <li key={category.id}>
+                    <span className="category-dot" style={{ backgroundColor: category.color }} />
+                    <span>{category.name}</span>
+                    <em>{stats.byCategory[category.id]}</em>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </section>

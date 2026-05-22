@@ -843,7 +843,7 @@
   border-bottom: 1px solid var(--border);
   display: grid;
   gap: 0;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .map-tabs button {
@@ -1398,21 +1398,40 @@
   z-index: 2;
 }
 
-.map-floating-summary strong {
+.legend-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.legend-toggle strong {
   color: var(--heading);
   display: block;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.08em;
-  margin-bottom: 8px;
   text-transform: uppercase;
+}
+
+.legend-toggle span {
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .map-floating-summary ul {
   display: grid;
   gap: 6px;
   list-style: none;
-  margin: 0;
+  margin: 8px 0 0;
   padding: 0;
 }
 
@@ -1468,18 +1487,21 @@
 }
 
 .draft-marker {
-  position: relative;
+  align-items: center;
+  display: grid;
+  height: 30px;
+  justify-items: center;
+  width: 30px;
 }
 
 .draft-marker span {
   background: var(--accent);
   border: 4px solid #fff;
-  border-radius: 50% 50% 50% 0;
+  border-radius: 999px;
   box-shadow: 0 8px 18px rgba(240, 124, 84, 0.42);
   display: block;
-  height: 30px;
-  transform: rotate(-45deg) translateY(-4px);
-  width: 30px;
+  height: 22px;
+  width: 22px;
   animation: draft-pulse 1.4s ease-in-out infinite;
 }
 
@@ -1876,7 +1898,7 @@
   }
 
   .map-tabs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .form-actions .button {
