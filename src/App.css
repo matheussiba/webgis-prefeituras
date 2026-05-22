@@ -174,7 +174,9 @@
 
 .split-section,
 .journey-section,
-.document-section {
+.document-section,
+.pilot-section,
+.proposal-section {
   align-items: start;
   display: grid;
   gap: 32px;
@@ -204,7 +206,11 @@
 .feature-card,
 .plan-card,
 .document-grid article,
-.sidebar-block {
+.sidebar-block,
+.pilot-card,
+.pilot-details article,
+.workflow-card,
+.compliance-grid article {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 28px;
@@ -212,6 +218,59 @@
 
 .feature-card {
   padding: 28px;
+}
+
+.pilot-card,
+.pilot-details article,
+.workflow-card,
+.compliance-grid article {
+  padding: 26px;
+}
+
+.pilot-card h2 {
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 0.98;
+  margin-bottom: 18px;
+}
+
+.pilot-card p,
+.pilot-details li,
+.workflow-card p,
+.compliance-grid p,
+.proposal-copy p {
+  color: var(--text-muted);
+}
+
+.pilot-details {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pilot-details span,
+.workflow-card span {
+  color: var(--accent);
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.pilot-details strong {
+  color: var(--heading);
+  display: block;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.pilot-details ul {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .feature-card span,
@@ -379,6 +438,35 @@
   padding-top: 34px;
 }
 
+.workflow-grid,
+.compliance-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.workflow-card h3,
+.compliance-grid h3 {
+  font-size: 20px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.compliance-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.proposal-section {
+  background: var(--accent-soft);
+  border-radius: 36px;
+  margin-bottom: 42px;
+}
+
+.proposal-copy {
+  display: grid;
+  gap: 16px;
+}
+
 .analytics-strip h2 {
   color: var(--surface);
   margin-bottom: 24px;
@@ -456,6 +544,8 @@
   .split-section,
   .journey-section,
   .document-section,
+  .pilot-section,
+  .proposal-section,
   .map-layout {
     grid-template-columns: 1fr;
   }
@@ -463,7 +553,10 @@
   .feature-grid,
   .analytics-grid,
   .plans-grid,
-  .document-grid {
+  .document-grid,
+  .pilot-details,
+  .workflow-grid,
+  .compliance-grid {
     grid-template-columns: 1fr;
   }
 

@@ -10,7 +10,15 @@ import {
   useMapEvents,
 } from 'react-leaflet'
 import type { LatLngExpression, LeafletMouseEvent } from 'leaflet'
-import { mapCenter, planTiers, sampleContributions, urbanLayers } from './data'
+import {
+  complianceItems,
+  mapCenter,
+  pilotProject,
+  planTiers,
+  sampleContributions,
+  urbanLayers,
+  workflowSteps,
+} from './data'
 import './App.css'
 
 function MapClickHandler({ onSelect }: { onSelect: (event: LeafletMouseEvent) => void }) {
@@ -87,7 +95,7 @@ function App() {
               <span>{t('proof.channels')}</span>
             </div>
             <div>
-              <strong>4</strong>
+              <strong>{urbanLayers.length}</strong>
               <span>{t('proof.layers')}</span>
             </div>
             <div>
@@ -107,6 +115,40 @@ function App() {
             <h2>{t('pain.title')}</h2>
           </div>
           <p>{t('pain.description')}</p>
+        </section>
+
+        <section className="section pilot-section">
+          <div className="pilot-card">
+            <p className="eyebrow">Município piloto</p>
+            <h2>{pilotProject.municipality}</h2>
+            <p>{pilotProject.scope}</p>
+          </div>
+          <div className="pilot-details">
+            <article>
+              <span>Fase simulada</span>
+              <strong>{pilotProject.phase}</strong>
+            </article>
+            <article>
+              <span>Duração da POC</span>
+              <strong>{pilotProject.duration}</strong>
+            </article>
+            <article>
+              <span>Canais de participação</span>
+              <ul>
+                {pilotProject.channels.map((channel) => (
+                  <li key={channel}>{channel}</li>
+                ))}
+              </ul>
+            </article>
+            <article>
+              <span>Entregáveis</span>
+              <ul>
+                {pilotProject.deliverables.map((deliverable) => (
+                  <li key={deliverable}>{deliverable}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
         </section>
 
         <section className="feature-grid" aria-label="Beneficios principais">
@@ -159,7 +201,7 @@ function App() {
                   onSelect={(event) => setSelectedPoint([event.latlng.lat, event.latlng.lng])}
                 />
                 {activeUrbanLayers.map((layer) =>
-                  layer.id === 'mobility' ? (
+                  layer.geometry === 'line' ? (
                     <Polyline
                       key={layer.id}
                       pathOptions={{ color: layer.color, weight: 5 }}
@@ -283,6 +325,26 @@ function App() {
           </div>
         </section>
 
+        <section className="section workflow-section">
+          <div className="section-heading">
+            <p className="eyebrow">Workflow multinível</p>
+            <h2>Da contribuição à devolutiva homologada.</h2>
+            <p>
+              O MVP explicita o caminho operacional previsto no DRS, mesmo que parte dele ainda seja
+              simulada no concierge.
+            </p>
+          </div>
+          <div className="workflow-grid">
+            {workflowSteps.map((step, index) => (
+              <article key={step.title} className="workflow-card">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="section document-section">
           <div>
             <p className="eyebrow">Linguagem cidadã</p>
@@ -297,6 +359,25 @@ function App() {
               <span>{t('documents.citizen')}</span>
               <p>{t('documents.citizenText')}</p>
             </article>
+          </div>
+        </section>
+
+        <section className="section compliance-section">
+          <div className="section-heading">
+            <p className="eyebrow">gov.br, LGPD e auditoria</p>
+            <h2>Conformidade tratada como requisito de produto.</h2>
+            <p>
+              A primeira versão apresenta a arquitetura de confiança que será implementada nas fases
+              institucionais do produto.
+            </p>
+          </div>
+          <div className="compliance-grid">
+            {complianceItems.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -318,6 +399,25 @@ function App() {
                 </ul>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="section proposal-section">
+          <div>
+            <p className="eyebrow">Proposta executiva</p>
+            <h2>POC pronta para apresentar a prefeitura ou consultoria.</h2>
+          </div>
+          <div className="proposal-copy">
+            <p>
+              A entrega sugerida é uma POC de 8 a 12 semanas para demonstrar portal público, WebGIS,
+              consulta documental, participação híbrida, triagem, devolutiva e exportação dos dados
+              consolidados para o relatório final do Plano Diretor.
+            </p>
+            <p>
+              O posicionamento comercial é vender uma plataforma de governança participativa, não um
+              site institucional: o preço acompanha a complexidade do processo, sem penalizar alta
+              participação cidadã.
+            </p>
           </div>
         </section>
 

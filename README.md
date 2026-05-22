@@ -34,3 +34,9 @@ npm run lint
 - Painel simples de indicadores publicos.
 - Secao de documento tecnico com linguagem cidada.
 - Planos comerciais inspirados em plataformas de citizen engagement.
+
+## Documentacao
+
+- `docs/mvp-scope.md`: escopo da versao concierge e proximas evolucoes.
+- `docs/compliance-and-identity.md`: abordagem de gov.br, CPF, LGPD, moderacao e audit trail.
+- `docs/public-sector-proposal.md`: proposta executiva para prefeitura, consultoria ou consorcio publico.
